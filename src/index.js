@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 
 import SearchBar from './components/search_bar';
+import VideoList from './components/vdo_list';
 
 const API_KEY = 'AIzaSyD7Z_tu0X_eHp4F5QWHr7V73vDCVIeNTyQ';
 
@@ -16,7 +17,7 @@ class App extends Component {
         this.state = { videos: [] };
 
         YTSearch({ key: API_KEY, term: 'block chain' }, (videos) => {
-            this.setState({ videos});
+            this.setState({ videos });
         });
     }
 
@@ -24,6 +25,7 @@ class App extends Component {
         return (
             <div>
                 <SearchBar />
+                <VideoList />
             </div>
         );
     }
