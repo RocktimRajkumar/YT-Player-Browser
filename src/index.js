@@ -20,7 +20,11 @@ class App extends Component {
             selectedVdo: null
         };
 
-        YTSearch({ key: API_KEY, term: 'Coding Train' }, (videos) => {
+        this.vdoSearch('Coding Train');
+    }
+
+    vdoSearch(term) {
+        YTSearch({ key: API_KEY, term: term }, (videos) => {
             this.setState({
                 videos: videos,
                 selectedVdo: videos[0]
@@ -31,9 +35,9 @@ class App extends Component {
     render() {
         return (
             <div className="row">
-                <SearchBar />
+                <SearchBar onSearchTermChange={term => this.vdoSearch(term)} />
                 <VideoDetail video={this.state.selectedVdo} />
-                <VideoList onVdoSelected={selectedVdo => this.setState({selectedVdo})} videos={this.state.videos} />
+                <VideoList onVdoSelected={selectedVdo => this.setState({ selectedVdo })} videos={this.state.videos} />
             </div>
         );
     }
