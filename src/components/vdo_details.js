@@ -14,6 +14,8 @@ const VideoDetail = ({ video }) => {
                 <iframe className="embed-responsive-item" src={url}></iframe>
             </div>
             <div className="details">
+                <div className="clearfix channelTime"><span className="float-left"><kbd>{video.snippet.channelTitle}</kbd></span>
+                 <span className="float-right"><code>{video.snippet.publishedAt}</code></span></div>
                 <div><strong>{video.snippet.title}</strong></div>
                 <div>{video.snippet.description}</div>
             </div>

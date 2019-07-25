@@ -6,9 +6,11 @@ const VideosList = (props) => {
         return <VideoListItem onVdoSelect={props.onVdoSelected} key={video.etag} video={video} />
     });
     return (
-        <ul className="col-md-4 list-group">
-            {videoItems}
-        </ul>
+        <div className="col-md-4">
+            <ul className="col-md-12 list-group">
+                {videoItems}
+            </ul>
+        </div>
     );
 };
 

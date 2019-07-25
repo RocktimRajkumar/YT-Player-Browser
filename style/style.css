@@ -1,0 +1,22 @@
+.search-bar {
+    margin: 20px 0px 20px 0px;
+}
+
+.video-detail .details {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.video-detail .details .channelTime {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item:hover {
+    background-color: #eee;
+}
