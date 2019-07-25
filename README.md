@@ -1,6 +1,5 @@
-# ReduxSimpleStarter
+# YT Player Browser React
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
 
 ### Getting Started
 
