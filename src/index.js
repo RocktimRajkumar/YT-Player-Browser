@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
@@ -33,9 +34,10 @@ class App extends Component {
     }
 
     render() {
+        const videoSearch = _.debounce((term) => { this.vdoSearch(term) }, 300);
         return (
             <div className="row">
-                <SearchBar onSearchTermChange={term => this.vdoSearch(term)} />
+                <SearchBar onSearchTermChange={videoSearch} />
                 <VideoDetail video={this.state.selectedVdo} />
                 <VideoList onVdoSelected={selectedVdo => this.setState({ selectedVdo })} videos={this.state.videos} />
             </div>
